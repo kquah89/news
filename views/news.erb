@@ -5,26 +5,121 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Google Fonts -->
-    <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    
+   <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab|Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=Sigmar+One&display=swap" rel="stylesheet">
+   
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <!-- Your own CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 
-    <title>News</title>
+    <title>Kellogg Newsletter</title>
   </head>
   <body>
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+         
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+       
+            <div class="navbar-nav ml-auto">
+              <a class="btn btn-outline-info" href="/">Refresh News and Weather Forecast</a>
+            </div>
+    
+      </nav>
+
+
+  
+<div class="jumbotron">
+    <div class="container">
+    <h1 class="display-4">Kellogg Newsletter</h1>
+    <p1 class="lead">Latest News and Weather report</p1>
+    </div>
+</div>
+
+    <div class="row mt-4"></div>
+
 
     <div class="container mt-5">
-      <h1>News</h1>
+      <h2><i class="fas fa-cloud-sun"></i>Evanston's Weather</h2>
     </div>
+          
+        <div class="container mt-5">
+        <h4>Current Weather</h4>
+        <% for currentcondition in @current %>
+            <p><%= currentcondition %></p>
+        <% end %>
+        </div>
+
+
+
+
+        <div class="container mt-5">
+        <p>
+        <h4>Weather Forecast over the next 7 days</h4>
+        <% for days in @extendedweather %>
+        <p><%= days %></p>
+        <% end %>
+        </p>
+        </div>
+
+ 
+
+    <hr class="my-4">
+
+
+        
+
+     <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h6>Top News Around the World</h6>
+          </div>
+        </div>
+
+      <div class="row mt-4">
+        <div class="col-sm-6 text-center">
+          <h9><i class="fas fa-landmark"></i></i></h9>
+          <h11>Top 5 business news</h11>
+        <% for story in @topnews %>
+        <p><a href=<%= story %></a></p>
+        <% end %>
+        </p>
+        </div>
+
+
+        <div class="col-sm-6 text-center">
+          <h9><i class="fas fa-football-ball"></i></h9>
+           <h11>Top 5 Sports news</h11>
+         <% for story in @sportsnews %>
+        <p><a href=<%= story %></a></p>
+        <% end %>
+        </p>
+        </div>
+
+      </div>
+    </div>
+    
+
+
+    <hr class="my-4">
+
+
+      <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <h13><a href="https://mdbootstrap.com/"> https://www.kellogg.northwestern.edu/</a></h13>
+     <p><a href=https://newsapi.org/>Top 10 Headlines Powered by News API</a></p>
+  </div>
+  <!-- Copyright -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
